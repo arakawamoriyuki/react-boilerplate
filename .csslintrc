@@ -1,0 +1,6 @@
+{
+  "ignore": [
+    "box-model",
+    "order-alphabetical"
+  ]
+}
