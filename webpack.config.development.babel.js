@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 
 module.exports = {
+  mode: 'development',
   cache: true,
   devtool: 'eval',
   entry: {

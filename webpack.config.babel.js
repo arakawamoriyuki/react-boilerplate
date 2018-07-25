@@ -21,7 +21,6 @@ module.exports = (env, argv) => {
   }
 
   const common = {
-    mode,
     target: 'web',
     context: __dirname,
     entry: {

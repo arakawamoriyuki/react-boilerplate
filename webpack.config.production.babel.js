@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 
 module.exports = {
+  mode: 'production',
   devtool: false,
   output: {
     path: `${__dirname}/public`,
