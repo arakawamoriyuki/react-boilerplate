@@ -2,16 +2,14 @@
   "name": "caad-react-boilerplate",
   "version": "1.0.0",
   "scripts": {
-    "test": "npm-run-all -p eslint stylelint nsp ava",
+    "test": "npm-run-all -p eslint stylelint ava",
     "ava": "ava",
-    "nsp": "nsp check",
     "eslint": "eslint ./src ./routes ./views",
     "eslint:fix": "eslint --fix .",
     "stylelint": "stylelint 'src/**/*.css'",
-    "prettier": "find ./webpack.* ./src -name '*.js' -o -name './sources/*.json' | xargs prettier-eslint --write",
     "start": "yarn start:development",
-    "start:development": "webpack-dev-server --progress --colors",
-    "start:production": "webpack-dev-server -p --host 0.0.0.0 --port 8080 --progress --colors",
+    "start:development": "webpack-dev-server --colors",
+    "start:production": "webpack-dev-server -p --host 0.0.0.0 --port 8080 --colors",
     "build": "webpack -p"
   },
   "repository": {
@@ -51,7 +49,6 @@
     "html-webpack-plugin": "3.2.0",
     "json-loader": "0.5.7",
     "npm-run-all": "^4.1.1",
-    "nsp": "3.2.1",
     "react-hot-loader": "4.3.3",
     "style-loader": "0.21.0",
     "stylelint": "9.3.0",
