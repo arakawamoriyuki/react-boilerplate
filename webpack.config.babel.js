@@ -85,7 +85,7 @@ module.exports = (env, argv) => {
 
       new webpack.DefinePlugin({
         'process.env': {
-          NODE_ENV: mode,
+          NODE_ENV: `"${mode}"`,
         },
       }),
     ],
