@@ -7,7 +7,7 @@
     "eslint:fix": "eslint --fix .",
     "stylelint": "stylelint 'src/**/*.css'",
     "start": "yarn start:development",
-    "start:development": "webpack-dev-server --colors",
+    "start:development": "webpack-dev-server --mode development --colors --hot",
     "start:production": "webpack-dev-server -p --host 0.0.0.0 --port 8080 --colors",
     "build": "webpack -p"
   },

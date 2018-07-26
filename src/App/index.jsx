@@ -1,4 +1,5 @@
 import React from 'react';
+import { hot } from 'react-hot-loader';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -11,20 +12,40 @@ const styles = {
   },
 };
 
-const App = (props) => {
-  const { classes } = props;
+class App extends React.Component {
+  constructor() {
+    super();
 
-  return (
-    <div className={classes.root}>
-      <Typography variant="display2" gutterBottom>
-      Hello World!!!!
-      </Typography>
-      <Button variant="contained" color="primary">
-      push me
-      </Button>
-    </div>
-  );
-};
+    this.state = {
+      count: 0,
+    };
+  }
+
+  handleButton() {
+    const { count } = this.state;
+    this.setState({ count: count + 1 });
+  }
+
+
+  render() {
+    const { classes } = this.props;
+    const { count } = this.state;
+
+    return (
+      <div className={classes.root}>
+        <Typography variant="display3" gutterBottom>
+        Hello World!
+        </Typography>
+        <Typography variant="display2" gutterBottom>
+          {`count: ${count}`}
+        </Typography>
+        <Button variant="contained" color="primary" onClick={() => this.handleButton()}>
+        push me
+        </Button>
+      </div>
+    );
+  }
+}
 
 App.propTypes = {
   classes: PropTypes.shape().isRequired,
@@ -34,4 +55,4 @@ App.defaultProp = {
   classes: {},
 };
 
-export default withStyles(styles)(App);
+export default hot(module)(withStyles(styles)(App));
