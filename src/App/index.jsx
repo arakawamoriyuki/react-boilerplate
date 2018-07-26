@@ -16,8 +16,8 @@ const App = (props) => {
 
   return (
     <div className={classes.root}>
-      <Typography variant="display4" gutterBottom>
-      Hello World!
+      <Typography variant="display2" gutterBottom>
+      Hello World!!!!
       </Typography>
       <Button variant="contained" color="primary">
       push me
@@ -27,7 +27,11 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  classes: PropTypes.shape.isRequired,
+  classes: PropTypes.shape().isRequired,
+};
+
+App.defaultProp = {
+  classes: {},
 };
 
 export default withStyles(styles)(App);

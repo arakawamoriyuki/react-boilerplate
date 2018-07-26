@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CleanWebpackPlugin from 'clean-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import merge from 'webpack-merge';
 import path from 'path';
@@ -32,7 +33,6 @@ module.exports = (env, argv) => {
       filename: '[name].js',
     },
     devServer: {
-      hot: false,
       inline: true,
       disableHostCheck: true,
       headers: { 'Access-Control-Allow-Origin': '*' },
@@ -66,6 +66,7 @@ module.exports = (env, argv) => {
       reasons: false,
     },
     plugins: [
+      new CleanWebpackPlugin(),
       new CopyWebpackPlugin([
         {
           from: 'src/static/config/*',

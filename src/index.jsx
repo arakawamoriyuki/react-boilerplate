@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import AppContainer from './AppContainer';
 import App from './App';
 
 const render = () => {
   ReactDOM.render(
-    <App />,
+    <AppContainer>
+      <App />
+    </AppContainer>,
     document.querySelector('#root'),
   );
 };
