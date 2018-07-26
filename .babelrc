@@ -6,9 +6,9 @@
         "targets": {
           "node": "current",
           "browsers": [
-            "last 3 versions",
-            "Explorer 11",
-            "safari >= 10"
+            ">0.25%",
+            "not ie 11",
+            "not op_mini all"
           ],
           "modules": false,
           "useBuiltIns": true
