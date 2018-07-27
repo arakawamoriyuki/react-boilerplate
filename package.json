@@ -1,6 +1,10 @@
 {
   "name": "caad-react-boilerplate",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=9.0 <10",
+    "yarn": ">=1.0"
+  },
   "scripts": {
     "test": "npm-run-all -p eslint stylelint",
     "eslint": "eslint ./src ./routes ./views",
