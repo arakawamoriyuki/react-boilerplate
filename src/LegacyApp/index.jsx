@@ -1,7 +1,6 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
 import PropTypes from 'prop-types';
-import { inject, observer } from 'mobx-react';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
@@ -17,37 +16,38 @@ const styles = {
   },
 };
 
-@inject('app')
-@observer
 class App extends React.Component {
-  static propTypes = {
-    app: PropTypes.shape().isRequired,
-    classes: PropTypes.shape().isRequired,
-  };
+  constructor() {
+    super();
+
+    this.state = {
+      count: 0,
+    };
+  }
 
   handleButton(n) {
-    const { app } = this.props;
-    app.addCount(n);
+    const { count } = this.state;
+    this.setState({ count: count + n });
   }
 
   handleResetButton() {
-    const { app } = this.props;
-    app.init();
+    this.setState({ count: 0 });
   }
 
+
   render() {
-    const { classes, app } = this.props;
-    const { count } = app;
+    const { classes } = this.props;
+    const { count } = this.state;
 
     return (
       <div className={classes.root}>
-        <div>
-          <Typography variant="display3" gutterBottom>
+        <Typography variant="display3" gutterBottom>
         Hello World!
-          </Typography>
-          <Typography variant="display2" gutterBottom>
-            {`count: ${count}`}
-          </Typography>
+        </Typography>
+        <Typography variant="display2" gutterBottom>
+          {`count: ${count}`}
+        </Typography>
+        <div>
           <Button variant="contained" color="primary" className={classes.button} onClick={() => this.handleButton(1)}>
         +
           </Button>
@@ -56,13 +56,21 @@ class App extends React.Component {
           </Button>
         </div>
         <div>
-          <Button variant="contained" color="primary" className={classes.button} onClick={() => this.handleResetButton()}>
-        Reset
+          <Button variant="contained" color="primary" className={classes.button} onClick={() => this.handleResetButton(0)}>
+       Reset
           </Button>
         </div>
       </div>
     );
   }
 }
+
+App.propTypes = {
+  classes: PropTypes.shape().isRequired,
+};
+
+App.defaultProp = {
+  classes: {},
+};
 
 export default hot(module)(withStyles(styles)(App));

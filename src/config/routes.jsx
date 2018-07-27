@@ -7,6 +7,7 @@ import { syncHistoryWithStore } from 'mobx-react-router';
 import createBrowserHistory from 'history/createBrowserHistory';
 import createStores from '../stores/createStores';
 
+import LegacyApp from '../LegacyApp';
 import App from '../App';
 import Readme from '../Readme';
 
@@ -24,14 +25,13 @@ syncHistory.listen((info, action) => {
 const routes = () => (
   <Provider {...stores}>
     <Router history={syncHistory}>
-      <div>
-        <Switch>
-          <Route path="/app" component={App} />
-          <Route path="/readme" component={Readme} />
-          <Route exact path="/" component={App} />
-          <Redirect from="*" to="/notfound" />
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/app" component={App} />
+        <Route path="/legacy" component={LegacyApp} />
+        <Route path="/readme" component={Readme} />
+        <Route exact path="/" component={App} />
+        <Redirect from="*" to="/notfound" />
+      </Switch>
     </Router>
   </Provider>
 );

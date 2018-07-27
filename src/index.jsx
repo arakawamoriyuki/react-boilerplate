@@ -16,7 +16,7 @@ render(Routes);
 
 if (module.hot) {
   module.hot.accept('./AppContainer', () => {
-    const NextRootContainer = require('./App/index.jsx').default;
+    const NextRootContainer = require('./config/routes.jsx').default;
     render(NextRootContainer);
   });
 }
