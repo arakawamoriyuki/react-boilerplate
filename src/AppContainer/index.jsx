@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import theme from '../config/muiTheme';
+import '../static/main.css';
 
-// TODO: bind thema and stores.
+// TODO: bind theme and stores.
 const AppContainer = (props) => {
   const { children } = props;
 
   return (
-    <div>
+    <MuiThemeProvider theme={theme}>
       {children}
-    </div>
+    </MuiThemeProvider>
   );
 };
 

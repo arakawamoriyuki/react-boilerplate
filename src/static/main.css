@@ -1,0 +1,14 @@
+body {
+  font-family: HiraKakuProN-W3, Roboto, sans-serif, Helvetica;
+  font-feature-settings: 'palt';
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  background-color: white;
+  overflow-x: hidden;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
