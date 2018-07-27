@@ -10,6 +10,10 @@ const styles = {
     width: '100%',
     maxWidth: 800,
   },
+  button: {
+    margin: 8,
+    color: 'white',
+  },
 };
 
 class App extends React.Component {
@@ -39,10 +43,10 @@ class App extends React.Component {
         <Typography variant="display2" gutterBottom>
           {`count: ${count}`}
         </Typography>
-        <Button variant="contained" color="primary" onClick={() => this.handleButton(1)}>
+        <Button variant="contained" color="primary" className={classes.button} onClick={() => this.handleButton(1)}>
         +
         </Button>
-        <Button variant="contained" color="secondary" onClick={() => this.handleButton(-1)}>
+        <Button variant="contained" color="secondary" className={classes.button} onClick={() => this.handleButton(-1)}>
         -
         </Button>
       </div>
