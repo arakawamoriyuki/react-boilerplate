@@ -4,7 +4,6 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import theme from '../config/muiTheme';
 import '../static/main.css';
 
-// TODO: bind theme and stores.
 const AppContainer = (props) => {
   const { children } = props;
 
