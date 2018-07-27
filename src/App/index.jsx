@@ -21,9 +21,9 @@ class App extends React.Component {
     };
   }
 
-  handleButton() {
+  handleButton(n) {
     const { count } = this.state;
-    this.setState({ count: count + 1 });
+    this.setState({ count: count + n });
   }
 
 
@@ -39,8 +39,11 @@ class App extends React.Component {
         <Typography variant="display2" gutterBottom>
           {`count: ${count}`}
         </Typography>
-        <Button variant="contained" color="primary" onClick={() => this.handleButton()}>
-        push me
+        <Button variant="contained" color="primary" onClick={() => this.handleButton(1)}>
+        +
+        </Button>
+        <Button variant="contained" color="secondary" onClick={() => this.handleButton(-1)}>
+        -
         </Button>
       </div>
     );
