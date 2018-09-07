@@ -5,7 +5,7 @@ module.exports = {
   devtool: false,
   output: {
     path: `${__dirname}/public`,
-    publicPath: '/',
+    publicPath: '',
     filename: '[name].[hash].js',
     chunkFilename: '[name].[hash].js',
   },

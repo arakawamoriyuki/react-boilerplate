@@ -29,7 +29,6 @@ module.exports = (env, argv) => {
     },
     output: {
       path: `${__dirname}/public`,
-      publicPath: '/',
       filename: '[name].js',
     },
     devServer: {

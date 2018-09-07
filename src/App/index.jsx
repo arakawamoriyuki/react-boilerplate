@@ -1,5 +1,6 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 import Button from '@material-ui/core/Button';
@@ -43,7 +44,7 @@ class App extends React.Component {
       <div className={classes.root}>
         <div>
           <Typography variant="display3" gutterBottom>
-        Hello World!
+            Counter
           </Typography>
           <Typography variant="display2" gutterBottom>
             {`count: ${count}`}
@@ -57,8 +58,14 @@ class App extends React.Component {
         </div>
         <div>
           <Button variant="contained" color="primary" className={classes.button} onClick={() => this.handleResetButton()}>
-        Reset
+            Reset
           </Button>
+
+          <Typography variant="display5" gutterBottom>
+            <Link to="/readme">
+              Readme
+            </Link>
+          </Typography>
         </div>
       </div>
     );

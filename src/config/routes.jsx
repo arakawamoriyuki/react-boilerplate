@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Router, Switch, Route, Redirect,
+  HashRouter as Router, Switch, Route, Redirect,
 } from 'react-router-dom';
 import { Provider } from 'mobx-react';
 import { syncHistoryWithStore } from 'mobx-react-router';
