@@ -10,6 +10,7 @@ import createStores from '../stores/createStores';
 import LegacyApp from '../LegacyApp';
 import App from '../App';
 import Readme from '../Readme';
+import Profile from '../Profile';
 
 const stores = createStores();
 
@@ -29,6 +30,7 @@ const routes = () => (
         <Route path="/app" component={App} />
         <Route path="/legacy" component={LegacyApp} />
         <Route path="/readme" component={Readme} />
+        <Route path="/profile" component={Profile} />
         <Route exact path="/" component={App} />
         <Redirect from="*" to="/notfound" />
       </Switch>
